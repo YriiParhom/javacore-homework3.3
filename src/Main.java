@@ -8,14 +8,22 @@ import java.util.zip.ZipInputStream;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Path sourse = Paths.get("D://Games/SaveGames/saves.zip");
-        Path target = Paths.get("D://Games/SaveGames/");
+        String separator = File.separator;
+        String save1 = "D:" + separator + separator + "Games" + separator + "SaveGames" + separator + "save1" +
+                ".dat";
+        String save2 = "D:" + separator + separator + "Games" + separator + "SaveGames" + separator + "save2" +
+                ".dat";
+        String save3 = "D:" + separator + separator + "Games" + separator + "SaveGames" + separator + "save3" +
+                ".dat";
+        Path sourse =
+                Paths.get("D:" + separator + separator + "Games" + separator + "SaveGames" + separator + "saves.zip");
+        Path target = Paths.get("D:" + separator + separator + "Games" + separator + "SaveGames" + separator);
 
         openZip(sourse, target);
 
-        gameProgress("D://Games/SaveGames/save1.dat");
-        gameProgress("D://Games/SaveGames/save2.dat");
-        gameProgress("D://Games/SaveGames/save3.dat");
+        gameProgress(save1);
+        gameProgress(save2);
+        gameProgress(save3);
     }
 
     public static void openZip(Path source, Path target) throws IOException {

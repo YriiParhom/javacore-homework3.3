@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.Serializable;
 
 public class GameProgress implements Serializable {
@@ -7,6 +8,7 @@ public class GameProgress implements Serializable {
     private int weapons;
     private int lvl;
     private double distance;
+    String separator = File.separator;
 
     public GameProgress(int health, int weapons, int lvl, double distance) {
         this.health = health;
@@ -16,11 +18,11 @@ public class GameProgress implements Serializable {
     }
 
     public String saveGame(String fileName) {
-        return "D://Games/SaveGames//" + fileName;
+        return "D:" + separator + separator + "Games" + separator + "SaveGames" + separator + fileName;
     }
 
     public String zipFiles(String zipName) {
-        return "D://Games/SaveGames//" + zipName;
+        return "D:" + separator + separator + "Games" + separator + "SaveGames" + separator + zipName;
     }
 
     @Override
